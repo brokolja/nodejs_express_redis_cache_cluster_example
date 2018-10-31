@@ -25,7 +25,7 @@ cluster(function (worker) {
   });
 
   app.listen(process.env.PORT || 8080, function () {
-    console.log('Example app listening on port:' + (process.env.PORT || 8080));
+    console.log('Worker #' + worker.id + ' listening on port:' + (process.env.PORT || 8080));
   });
 }, {
     verbose: true,
