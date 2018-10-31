@@ -29,5 +29,4 @@ cluster(function (worker) {
   });
 }, {
     verbose: true,
-    count: os.cpus().length
 });
