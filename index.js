@@ -20,7 +20,7 @@ cluster(function (worker) {
 
   var app = express();
   
-  app.get('/', function (req, res) {
+  app.get('/', cache.route(), function (req, res) {
     res.send('Hello World from worker #' + worker.id + "! We are shipping Nodejs-Version: " + process.version);
   });
 
