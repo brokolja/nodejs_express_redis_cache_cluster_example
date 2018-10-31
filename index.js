@@ -20,11 +20,14 @@ cluster(function (worker) {
 
   var app = express();
   
-  app.get('/', cache.route(), function (req, res) {
+  app.get('/', function (req, res) {
     res.send('Hello World from worker #' + worker.id + "! We are shipping Nodejs-Version: " + process.version);
   });
 
   app.listen(process.env.PORT || 8080, function () {
     console.log('Example app listening on port:' + (process.env.PORT || 8080));
   });
+}, {
+    verbose: true,
+    count: os.cpus().length
 });
